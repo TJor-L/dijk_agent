@@ -1,9 +1,11 @@
 from typing import Dict, Type
 from .base import BaseAgent
-from .simple_agent import SimpleAgent
+from .direct_agent import DirectAgent
+from .tool_agent import ToolAgent
 
 _REGISTRY: Dict[str, Type[BaseAgent]] = {
-    "simple": SimpleAgent,
+    "direct": DirectAgent,
+    "tool": ToolAgent,
 }
 
 def create(name: str, **kwargs) -> BaseAgent:

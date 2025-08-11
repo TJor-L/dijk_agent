@@ -1,8 +1,10 @@
 from typing import Dict, Type
-from .simple_qa import SimpleQAPipeline
+from .tool_qa import ToolQAPipeline
+from .direct_qa import DirectQAPipeline
 
 _REGISTRY: Dict[str, Type] = {
-    "simple-qa": SimpleQAPipeline,
+    "tool-qa": ToolQAPipeline,
+    "direct-qa": DirectQAPipeline,
 }
 
 def create(name: str, **kwargs):
